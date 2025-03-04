@@ -173,6 +173,10 @@ def get_leaderboard():
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
+@app.route("/")
+def home():
+    return jsonify({"message": "Backend is running!"})
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
